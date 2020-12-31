@@ -1,7 +1,6 @@
 import pytest
 
-from user_group import Group, User
-from user_group_composition import GroupBehavior
+from mixin_and_composition.user_group import Group, User
 
 
 def test_user_join_group():
@@ -27,7 +26,7 @@ def test_max_group_cnt():
 
     # given
     fred = User(1, 'fred')
-    groups = [Group(i, str(i)) for i in range(1, GroupBehavior.MAX_GROUP_CNT+1)]
+    groups = [Group(i, str(i)) for i in range(1, User.MAX_GROUP_CNT+1)]
     for group in groups:
         fred.join_group(group)
 
